@@ -6,8 +6,17 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-first-project';
+  title = 'Learn Angular';
+  isComplete = false;
+
+  completeTask() {
+    this.isComplete = !this.isComplete;
+  }
+
+  updateTitle(newTitle: string) {
+    this.title = newTitle;
+  }
 }
