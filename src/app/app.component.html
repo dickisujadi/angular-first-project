@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   main {
     width: 100%;
@@ -31,14 +22,21 @@
     <button (click)="completeTask()">Complete Task</button>
     <button (click)="updateTitle('New Title')">Update Title</button>
   </div>
-</main>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <div class="">
+    @if (isComplete) {
+    <p>This task is complete</p>
+    } @else {
+    <p>This task is not complete</p>
+    }
+  </div>
+
+  <ul>
+    <!-- When Angular renders a list of elements with @for, those items can later change or move. Angular needs to track each element through any reordering, usually by treating a property of the item as a unique identifier or key. -->
+    @for (fruit of fruitList; track fruit.name) {
+    <li>{{ fruit.name }} - quantity {{ fruit.quantity }}</li>
+    }
+  </ul>
+</main>
 
 <router-outlet />

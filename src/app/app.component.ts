@@ -12,6 +12,14 @@ export class AppComponent {
   title = 'Learn Angular';
   isComplete = false;
 
+  fruitList = [
+    { name: 'Apple', quantity: 10 },
+    { name: 'Banana', quantity: 5 },
+    { name: 'Orange', quantity: 15 },
+    { name: 'Mango', quantity: 8 },
+    { name: 'Grapes', quantity: 12 },
+  ];
+
   completeTask() {
     this.isComplete = !this.isComplete;
   }
